@@ -40,7 +40,7 @@ class App extends Component {
         "This is the body",
         {
           params: {},
-          headers: headers,
+          headers: {},
         }
       )
       .then(response => {
@@ -87,9 +87,6 @@ class App extends Component {
       // login link to get access token
       return (
         <div>
-          <a href={`https://identity.fortellis.io/oauth2/aus1p1ixy7YL8cMq02p7/v1/authorize?response_type=token&client_id=${client_id}&redirect_uri=${redirect_uri}&nonce=nonce&scope=openid&state=state`}>
-          Login with Fortellis
-          </a>
           <button onClick={this.getToken}>Login with Fortellis</button>
         </div>
         
