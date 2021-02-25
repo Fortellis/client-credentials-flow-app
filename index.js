@@ -21,16 +21,13 @@ app.get('*', (req, res) => {
 });
 
 app.post(`/token`, (req, res) => {
-    console.log(req.body);
     console.log(req.headers);
-    console.log(req.headers.authorization);
+    console.log(token);
     console.log(req.headers.accept);
     console.log(req.headers['content-type']);
-    console.log(req.query.grant_type);
-    console.log("This is the scope: " + req.query.scope);
     const headers = {
       accept: req.headers.accept,
-      authorization: token,
+      authorization: 'Basic' + token,
     };
     axios
       .post(
@@ -52,4 +49,9 @@ app.post(`/token`, (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}`);
+});
+
+app.use(express.static('client/build'));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build'));
 });
