@@ -27,7 +27,7 @@ app.post(`/token`, (req, res) => {
     console.log(req.headers['content-type']);
     const headers = {
       accept: req.headers.accept,
-      authorization: 'Basic' + token,
+      authorization: 'Basic ' + token,
     };
     axios
       .post(
