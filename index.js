@@ -34,7 +34,7 @@ app.post(`/token`, (req, res) => {
     };
     axios
       .post(
-        `https://identity-dev.fortellis.io/oauth2/aus1ni5i9n9WkzcYa2p7/v1/token/?scope=anonymous&grant_type=client_credentials`,
+        `https://identity.fortellis.io/oauth2/aus1p1ixy7YL8cMq02p7/v1/token/?scope=anonymous&grant_type=client_credentials`,
         null,
         {
           params: {},
