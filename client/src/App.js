@@ -21,16 +21,6 @@ class App extends Component {
       vehicles: []
     }
   }
-
-  componentWillMount() {
-    // if the URL contains a token, grab it and hide it from the user
-    token =
-      window.location.href.match(/access_token=(.*?)&/) &&
-      window.location.href.match(/access_token=(.*?)&/)[1];
-  
-    window.history.replaceState(document.title, window.location.pathname + window.location.search);
-  }
-
   getToken() {
     console.log("You clicked the button.");
 
